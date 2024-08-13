@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h2>session storage</h2>
+    
+    <script>
+        const text="ABCDEFGHI";
+        sessionStorage.setItem("name","Aman Singh");
+        let getValues=sessionStorage.getItem("name");
+        console.log(getValues);
+        {
+            sessionStorage.setItem("name","Aman Singh");
+            let getVal=sessionStorage.getItem("name");
+
+            console.log(getVal);
+            
+        }
+    </script>
+</body>
+</html>

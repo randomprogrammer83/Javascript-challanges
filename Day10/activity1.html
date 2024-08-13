@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2 class="text">
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Perferendis, reiciendis!
+    </h2>
+    <button  class="btn">clilck me!</button>
+    <img src="cart.png" alt="">
+    <h2 class="mouse">Lorem ipsum dolor sit amet consectetur adipisicing.</h2>
+    <h3 class="mouse-2" style="background-color: tomato;">nihil molestiae minima praesentium delectus? Obcaecati aliquam officiis corporis rem id voluptatibus iure, ex voluptas at, ea earum labore quae?10</h3>
+
+    <input type="text" class="inp" style="height: 3rem; width: 7rem;">
+
+    <ul class="ul-list">
+        <li>One</li>
+        <li>Two</li>
+        <li>Three</li>
+        <li>Fout</li>
+
+    </ul>
+    <script>
+
+
+        let text=document.querySelector('.text');
+    let btn=document.querySelector('.btn');
+    btn.addEventListener('click',()=>{
+        text.style.color="yellow"
+        text.style.fontweight="900"
+    })
+    let hovermouse=document.querySelector('.mouse');
+    hovermouse.addEventListener('mouseover',()=>{
+        hovermouse.style.color="red"
+
+    })
+    let mouseHover_2=document.querySelector('.mouse-2');
+    mouseHover_2.addEventListener('mouseover',()=>{
+mouseHover_2.style="none"
+    })
+    let inp=document.querySelector('.inp');
+    inp.addEventListener('keydown',()=>{
+        console.log(inp.value)
+    })
+    inp.addEventListener('keyup',()=>{
+        let res=inp.value;
+        console.log(res)
+        let p=document.createElement('p');
+       p.innerText=res;
+        // console.log(p);
+        document.body.appendChild(p);
+    })
+
+    let ulList=document.querySelector('.ul-list')
+    ulList.addEventListener('click',(event)=>{
+        if (event.target.tagName==='li') {
+            console.log(`${event.target.textContent}`);
+            
+        }
+    })
+    </script>
+</body>
+</html>

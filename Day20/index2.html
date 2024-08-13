@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: aqua;">
+    <style>
+        .main{
+            /* display: flex; */
+            justify-content: center;
+            align-items: center;
+            height: 40vh;
+            width: 20%;
+            background-color: #aa1919;
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 5px rgba(0,0,0,0.2);
+            transition: box-shadow 0.3s ease-in-out;
+            cursor: pointer;
+                margin-left: 20rem;
+                margin-top: 5rem;
+        }
+        form{
+            display: flex;
+            justify-content: center;
+            align-self:center;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+        form input,button{
+            width: 100%;
+            padding: 0.5rem;
+            margin: 0;
+            border: none;
+            border-radius: 5px;
+            box-shadow: 0 0 5px rgba(0,0,0,0.2);
+            outline: none;
+            font-size: 1.2rem;
+            background-color: #fff;
+            transition: background-color 0.3s ease-in-out;
+        }
+    </style>
+    <div class="main">
+     <form action="">
+        <label for="">Enter email</label>
+        <input type="email" name="" required id="inp">
+        <label for="">Enter password</label>
+        <input type="password" name="" required id="pass">
+            <button type="submit">Submit</button>
+            <button type="reset" id="delete">Delete</button>
+     </form>
+    </div>
+     
+    <script>
+        let email=document.querySelector('#inp');
+        let pass=document.querySelector('#pass');
+                let  getvalues;
+        const handleSubmit=(e)=>{
+                e.preventDefault();
+                const emailValue=email.value;
+                const passValue=pass.value;
+                // introducning local storage
+                localStorage.setItem("values",JSON.stringify({emailValue,passValue}))
+                 getvalues=localStorage.getItem("values");
+                console.log(JSON.parse(getvalues));
+                console.log(email.value,pass.value);
+        }
+        let btn=document.querySelector('button');
+                btn.addEventListener('click',handleSubmit);
+
+                       // write a script to remove the value from the  local storage
+        const removeVal=()=>{
+            if (getvalues) {
+                    
+                    for (const key in getvalues) {
+                        localStorage.removeItem(key);
+                        console.log(`remove Local storage ${key} `);
+   
+                    }
+                    
+                    }
+            
+            }
+        
+                  const btn2=document.querySelector("#delete")
+                  btn2.addEventListener("click",removeVal
+
+                  )
+
+
+    </script>
+
+</body>
+</html>
